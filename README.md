@@ -5,5 +5,8 @@ Members:	Shae-Marie Small
 		Mercedes Smith 
 		Joshua McIntosh
 		Dillon Waugh
+		Ayodeji Adedipe
+	
+
 		
 		
