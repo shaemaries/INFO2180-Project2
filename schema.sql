@@ -26,34 +26,35 @@ USE BugMe;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `issues`
---
-
-CREATE TABLE `Issues` (
-  `id` int(11) DEFAULT NULL,
-  `title` varchar(32) NOT NULL,
-  `description` text NOT NULL,
-  `type` varchar(32) NOT NULL,
-  `priority` varchar(32) NOT NULL,
-  `status` varchar(32) NOT NULL,
-  `assigned_to` int(11) NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `created` datetime NOT NULL,
-  `updated` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user`
 --
 
 CREATE TABLE `Users` (
-  `id` int(11) DEFAULT NULL,
-  `firstname` varchar(16) NOT NULL,
-  `lastname` varchar(16) NOT NULL,
-  `password` varchar(16) NOT NULL,
-  `email` varchar(32) NOT NULL,
-  `date_joined` datetime NOT NULL
+  `id` INT AUTO_INCREMENT,
+  `firstname` VARCHAR(16) NOT NULL,
+  `lastname` VARCHAR(16) NOT NULL,
+  `password` VARCHAR(16) NOT NULL,
+  `email` VARCHAR(32) NOT NULL,
+  `date_joined` DATETIME NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `issues`
+--
+
+CREATE TABLE `Issues` (
+  `id` INT AUTO_INCREMENT,
+  `title` VARCHAR(32) NOT NULL,
+  `description` TEXT NOT NULL,
+  `type` VARCHAR(32) NOT NULL,
+  `priority` VARCHAR(32) NOT NULL,
+  `status` VARCHAR(32) NOT NULL,
+  `assigned_to` INT(11) NOT NULL,
+  `created_by` INT(11) NOT NULL,
+  `created` DATETIME NOT NULL,
+  `updated` DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
