@@ -38,7 +38,8 @@ CREATE TABLE `Users` (
   `date_joined` DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-
+INSERT INTO users('firstname', 'lastname', 'password', 'email' ) VALUES 
+('admin', 'adminlastname', '$2y$10$aZv4YQvGDCQi032gCZEjTufKRPTSlo2KmN1rZ0lwbYL3M7n5YlXxe', 'admin@project2.com');
 -- --------------------------------------------------------
 
 --
