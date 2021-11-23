@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bug Tracker</title>
-    <link rel="stylesheet" href="index.css">
+    <meta charset="utf-8">
+    <title>Forms and PHP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="index.css" media="screen">
   </head>
   <body>
+    <header>
+      <div class="container">
+          <img src="bug.png" alt="Bug Logo">
+          <h4>BugMe Issue Tracker</h4>
+    </header>
       <main>
         <h2>New User</h2>
         <form action="letter.php" method="post">
@@ -26,7 +31,6 @@
             <label for="email">Email</label>
             <input type="text" name="email" id="email" class="form-control" />
           </div>
-          <button type="submit" name="submitBtn" class="btn btn-primary">Submit</button>
 
         </form>
         </main>
