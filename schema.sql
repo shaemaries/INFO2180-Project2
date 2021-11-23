@@ -20,16 +20,16 @@ SET time_zone = "+00:00";
 --
 -- Database: `bugme`
 --
-CREATE DATABASE IF NOT EXISTS `bugme` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `bugme`;
-
+DROP DATABASE IF EXISTS BugMe;
+CREATE DATABASE BugMe;
+USE BugMe;
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `issues`
 --
 
-CREATE TABLE `issues` (
+CREATE TABLE `Issues` (
   `id` int(11) DEFAULT NULL,
   `title` varchar(32) NOT NULL,
   `description` text NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE `issues` (
 -- Table structure for table `user`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE `Users` (
   `id` int(11) DEFAULT NULL,
   `firstname` varchar(16) NOT NULL,
   `lastname` varchar(16) NOT NULL,
@@ -56,3 +56,4 @@ CREATE TABLE `user` (
   `email` varchar(32) NOT NULL,
   `date_joined` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
