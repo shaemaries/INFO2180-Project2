@@ -13,23 +13,22 @@ function validation(){
 
     var emailexpression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     var passwordexpression = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-    if (emailexpression.test(email))
-    {
+    console.log(email);
+    if (emailexpression.test(email)){
         console.log("Valid email");
-        if (passwordexpression.test(password) && password.length >=8)
-        {
+        if (passwordexpression.test(password) && password.length >=8){
+            console.log("Valid password");
             return true;
         }
-        else
-        {
+        else{
             alert("Invalid password");
             return false;
         }        
     }
-    else
-    {
+    else{
         alert("Invalid email");
         return false;
-    }    
+    } 
+    
 }
 
