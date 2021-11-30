@@ -38,8 +38,6 @@ session_start();
 
 ?>
 
-
-
 <div class="container">
     <div class="error-box">
             <span id="error-text" class="text-danger">
