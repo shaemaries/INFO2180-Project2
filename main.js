@@ -1,25 +1,35 @@
 "use strict";
 
 window.onload = function(){
+    var button = document.querySelector(".btn");
+    button.addEventListener('click', validation);
 }
 
 function validation(){
     event.preventDefault();
-    var email=document.getElementById("email");
-    var password=document.getElementById("password")
 
-    if(email.length=="" && password.length==""){
-        alert("Email Address and Password fields are empty");
-        return false;
+    var email=document.getElementById("email").value.trim();
+    var password=document.getElementById("password").value.trim();
+
+    var emailexpression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    var passwordexpression = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    if (emailexpression.test(email))
+    {
+        console.log("Valid email");
+        if (passwordexpression.test(password) && password.length >=8)
+        {
+            return true;
         }
-    else 
+        else
+        {
+            alert("Invalid password");
+            return false;
+        }        
+    }
+    else
+    {
+        alert("Invalid email");
+        return false;
+    }    
+}
 
-    if(email.length=="") {  
-        alert("Email address is empty");  
-        return false;  
-    }   
-    if (password.length=="") {  
-         alert("Password field is empty");  
-        return false;  
-    }  
-}             

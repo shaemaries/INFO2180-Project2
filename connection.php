@@ -1,17 +1,18 @@
 <?php
+function sanitizeData($data_to_sanitize) {
+  return trim(htmlspecialchars(strip_tags($data_to_sanitize)));
+}
+?>
 
-$host = "localhost";  
-$user = "project2admin";  
-$password = "admi123";  
-$db_name = "BugMe";  
+<?php
 
-
-try{
-    $con = new PDO("mysql:host=$host;db_name=$db_name;", $user, $password);
-    // Set the PDO error mode to exception
-    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  } catch(PDOException $e){
-    die("ERROR: Could not connect. " . $e->getMessage());
-
-}  
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'finalprojectadmin');
+define('DB_PASSWORD', 'admin123');
+define('DB_DATABASE', 'BugMe');
+      
+    $con = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE); 
+    if(mysqli_connect_errno()) {  
+        die("Failed to connect with MySQL: ". mysqli_connect_error());  
+    }  
 ?>  

@@ -30,16 +30,16 @@ USE BugMe;
 --
 
 CREATE TABLE `Users` (
-  `id` INT AUTO_INCREMENT,
-  `firstname` VARCHAR(16) NOT NULL,
-  `lastname` VARCHAR(16) NOT NULL,
-  `password` VARCHAR(16) NOT NULL,
-  `email` VARCHAR(32) NOT NULL,
-  `date_joined` DATETIME NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  id INT AUTO_INCREMENT,
+  firstname VARCHAR(16) NOT NULL,
+  lastname VARCHAR(16) NOT NULL,
+  password_h VARCHAR(16) NOT NULL,
+  email VARCHAR(32) NOT NULL,
+  date_joined DATETIME NOT NULL
+) ENGINE = MyISAM AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8mb4;
 
-INSERT INTO users('firstname', 'lastname', 'password', 'email' ) VALUES 
-('admin', 'adminlastname', '$2y$10$aZv4YQvGDCQi032gCZEjTufKRPTSlo2KmN1rZ0lwbYL3M7n5YlXxe', 'admin@project2.com');
+INSERT INTO Users(firstname, lastname, password_h, email,date_joined ) VALUES 
+('admin', 'adminlastname', '$2y$10$aZv4YQvGDCQi032gCZEjTufKRPTSlo2KmN1rZ0lwbYL3M7n5YlXxe', 'admin@project2.com','2021-11-2 11:38:00');
 -- --------------------------------------------------------
 
 --
@@ -47,15 +47,15 @@ INSERT INTO users('firstname', 'lastname', 'password', 'email' ) VALUES
 --
 
 CREATE TABLE `Issues` (
-  `id` INT AUTO_INCREMENT,
-  `title` VARCHAR(32) NOT NULL,
-  `description` TEXT NOT NULL,
-  `type` VARCHAR(32) NOT NULL,
-  `priority` VARCHAR(32) NOT NULL,
-  `status` VARCHAR(32) NOT NULL,
-  `assigned_to` INT(11) NOT NULL,
-  `created_by` INT(11) NOT NULL,
-  `created` DATETIME NOT NULL,
-  `updated` DATETIME NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  id INT AUTO_INCREMENT,
+  title VARCHAR(32) NOT NULL,
+  description TEXT NOT NULL,
+  type VARCHAR(32) NOT NULL,
+  priority VARCHAR(32) NOT NULL,
+  status VARCHAR(32) NOT NULL,
+  assigned_to INT(11) NOT NULL,
+  created_by INT(11) NOT NULL,
+  created DATETIME NOT NULL,
+  updated DATETIME NOT NULL
+) 
 
