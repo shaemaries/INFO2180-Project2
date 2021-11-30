@@ -28,7 +28,6 @@ function validation(){
     else{
         alert("Invalid email");
         return false;
-    } 
-    
+    }     
 }
 
