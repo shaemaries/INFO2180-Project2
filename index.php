@@ -12,8 +12,8 @@
           <h4>BugMe Issue Tracker</h4>
     </header>
       <main>
-      <?php include 'login.php'; ?>
-        </main>
+         <?php include 'login.php'; ?>
+      </main>
  </body>
 </html>
 
