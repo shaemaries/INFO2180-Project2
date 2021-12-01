@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$email = sanitizeData($_POST['email']);
 	$doe = date('Y-m-d',time());
 	$phash= password_hash($password,PASSWORD_BCRYPT);
-
+}
 ?>
 
 
@@ -30,5 +30,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <label for="email">Email</label>
     <input type="text" name="email" id="email" class="form-control" />
   </div>
-
 </form>
