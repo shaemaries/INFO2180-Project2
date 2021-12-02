@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 if (isValid($firstname) && isValid($lastname) && isValid($password)) {
   // Save data newt_open_window(left, top, width, height)
-        $sql = "INSERT INTO Users( firstname, lastname, password_hash, email, date_joined) VALUES 
+        $sql = "INSERT INTO Users( firstname, lastname, password_h, email, date_joined) VALUES 
                 ('$firstname', '$lastname', '$hash', '$email', '$date')";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
