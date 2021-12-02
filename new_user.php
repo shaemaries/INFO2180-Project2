@@ -9,8 +9,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$doe = date('Y-m-d',time());
 	$phash= password_hash($password,PASSWORD_BCRYPT);
 }
-?>
 
+if (isValid($firstname) && isValid($lastname) && isValid($password)) {
+  // Save data newt_open_window(left, top, width, height)
+        $sql = "INSERT INTO Users( firstname, lastname, password_hash, email, date_joined) VALUES 
+                ('$firstname', '$lastname', '$hash', '$email', '$date')";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        echo 'User added successfully';
+      } else {
+        echo 'Something went wrong or user already exist';
+      }
+    }
+
+    function isValid($value) {
+      if ($value == "" or $value == null) {
+        return false;
+      } 
+      return true;
+    }
+?>
 
 <h2>New User</h2>
 <form action="letter.php" method="post">
