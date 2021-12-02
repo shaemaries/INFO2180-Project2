@@ -1,5 +1,3 @@
-
-
 <div class="container">
     <form action="authentication.php" method="post" id="form" >
     <div class="form-group">

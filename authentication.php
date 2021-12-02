@@ -27,7 +27,7 @@ include("connection.php");
                 session_start();
                 $_SESSION['loggedin'] = $id;
             
-            header("location: new_user.php");
+            header("location: sidebar.php");
             }else {
                  $error= "Your Email or Password is invalid";
              }
