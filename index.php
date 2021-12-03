@@ -8,8 +8,8 @@
   </head>
   <body>
     <header>
-      <div class="container">
-          <h4>BugMe Issue Tracker</h4>
+      <div class="container1">
+          <h4><img src="bug.png" alt="logo">BugMe Issue Tracker</h4>
     </header>
       <main>
          <?php include 'login.php'; ?>
