@@ -8,44 +8,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$email = sanitizeData($_POST['email']);
 	$doe = date('Y-m-d',time());
 	$phash= password_hash($password,PASSWORD_BCRYPT);
+
+  if (isValid($firstname) && isValid($lastname) && isValid($password)) {
+    // Save data newt_open_window(left, top, width, height)
+          $sql = "INSERT INTO Users( firstname, lastname, password_h, email, date_joined) VALUES 
+                  ('$firstname', '$lastname', '$hash', '$email', '$date')";
+          $stmt = $pdo->prepare($sql);
+          $stmt->execute();
+          echo 'User added successfully';
+        } else {
+          echo 'Something went wrong or user already exist';
+        }
+      
+  
+      function isValid($value) {
+        if ($value == "" or $value == null) {
+          return false;
+        } 
+        return true;
+      }
 }
 
-if (isValid($firstname) && isValid($lastname) && isValid($password)) {
-  // Save data newt_open_window(left, top, width, height)
-        $sql = "INSERT INTO Users( firstname, lastname, password_h, email, date_joined) VALUES 
-                ('$firstname', '$lastname', '$hash', '$email', '$date')";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
-        echo 'User added successfully';
-      } else {
-        echo 'Something went wrong or user already exist';
-      }
-    }
 
-    function isValid($value) {
-      if ($value == "" or $value == null) {
-        return false;
-      } 
-      return true;
-    }
 ?>
 
-<h2>New User</h2>
-<form action="letter.php" method="post">
-  <div class="form-group">
-    <label for="firstname">First name</label>
-    <input type="text" name="firstname" id="firstname" class="form-control" />
+<h1>New User</h1>
+
+<form id="f1" action="" method="post" onsubmit="return validation(event);">
+  <div class="field">
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" name="firstname" required>
   </div>
-  <div class="form-group">
-    <label for="lastname">Last name</label>
-    <input type="text" name="lastname" id="lastname" class="form-control" />
+  <div class="field">
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" name="lastname" required>
   </div>
-  <div class="form-group">
+  <div class="field">
     <label for="password">Password</label>
-    <input type="text" name="password" id="password" class="form-control" />
+    <input type="password" id="password" name="password" required>
   </div>
-  <div class="form-group">
+  <div class="field">
     <label for="email">Email</label>
-    <input type="text" name="email" id="email" class="form-control" />
+    <input type="email" id="email" name="email" placeholder=" e.g: JohnDoe@bugme.com" required>
   </div>
+  <input type="submit" name="submitButton" class="btn btn-primary"/>
 </form>

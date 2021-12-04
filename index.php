@@ -9,6 +9,7 @@
   <body>
     <header>
       <div class="container">
+      <img src="./bug.png" alt="Bug Logo" height="50" width="50">
           <h4>BugMe Issue Tracker</h4>
     </header>
       <main>
