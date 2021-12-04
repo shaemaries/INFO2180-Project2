@@ -68,7 +68,7 @@ function passData(event, to, formdata, setto) {
 
       // Get data and update ui
       response.text().then(function(promise) {
-          updateUI(se_to, promise);
+          updateUI(setto, promise);
       });
 	  })
 	  .catch(function(error) {
@@ -127,5 +127,5 @@ function validateNewUserForm(event) {
 	form_data.append("password", password);
 	form_data.append("email", email);
 
-	passData(event, "./new_user.php", form_data, find_element_by_id("content"));
+	passData(event, "./new_user.php", form_data, findelementbyid("content"));
 }

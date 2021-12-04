@@ -53,3 +53,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </div>
   <input type="submit" name="submitButton" class="btn btn-primary"/>
 </form>
+
+<main>
+	<div class="container" id="content">
+	<link rel="stylesheet" href="index.css" media="screen">
+	<script src="main.js"></script>
+	</div><!--/.container-->
+</main>

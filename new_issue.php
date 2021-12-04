@@ -16,18 +16,16 @@
   <div class="field">
     <label for="assigned">Assigned To</label>
     <select id="assigned" name="assigned"> 
-      <!-- Get users from db -->
       <?php 
         $sql = "SELECT Users.firstname, Users.lastname, Users.id FROM Users";
         $stmt = $pdo->query($sql);
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      ?>s
+      ?>
       <?php foreach ($users as $user): ?>
         <option value="<?= $user['id'] ?>"><?= combine_name($user) ?></option>
       <?php endforeach; ?>
     </select>
   </div>
-  <!--This requires PHP & SQL to do-->
   <div class="field">
     <label for="type">Type</label>
     <select id="type" name="type" required>
@@ -48,3 +46,10 @@
     <input type="submit" class="btn" value="Submit">
   </div>
 </form>
+
+<main>
+	<div class="container" id="content">
+	<link rel="stylesheet" href="index.css" media="screen">
+	<script src="main.js"></script>
+	</div><!--/.container-->
+</main>
