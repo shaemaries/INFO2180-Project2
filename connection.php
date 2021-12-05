@@ -4,6 +4,7 @@ function sanitizeData($data_to_sanitize) {
 }
 ?>
 
+
 <?php
 
 $host = "localhost";
