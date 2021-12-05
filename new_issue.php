@@ -1,5 +1,9 @@
 <?php 
-  include "connection.php";
+  require_once "connection.php";
+
+  function combinename($user) {
+		return "{$user['firstname']} {$user['lastname']}";
+	}
 ?>
 
 <h1>New Issue</h1>
@@ -18,11 +22,11 @@
     <select id="assigned" name="assigned"> 
       <?php 
         $sql = "SELECT Users.firstname, Users.lastname, Users.id FROM Users";
-        $stmt = $pdo->query($sql);
+        $stmt = $con->query($sql);
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
       ?>
       <?php foreach ($users as $user): ?>
-        <option value="<?= $user['id'] ?>"><?= combine_name($user) ?></option>
+        <option value="<?= $user['id'] ?>"><?= combinename($user) ?></option>
       <?php endforeach; ?>
     </select>
   </div>
@@ -49,7 +53,6 @@
 
 <main>
 	<div class="container" id="content">
-	<link rel="stylesheet" href="index.css" media="screen">
-	<script src="main.js"></script>
-	</div><!--/.container-->
+    <link rel="stylesheet" href="index.css" media="screen">
+	</div>
 </main>

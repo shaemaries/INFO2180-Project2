@@ -10,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$phash= password_hash($password,PASSWORD_BCRYPT);
 
   if (isValid($firstname) && isValid($lastname) && isValid($password)) {
-    // Save data newt_open_window(left, top, width, height)
           $sql = "INSERT INTO Users( firstname, lastname, password_h, email, date_joined) VALUES 
                   ('$firstname', '$lastname', '$hash', '$email', '$date')";
           $stmt = $pdo->prepare($sql);
@@ -56,7 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <main>
 	<div class="container" id="content">
-	<link rel="stylesheet" href="index.css" media="screen">
-	<script src="main.js"></script>
-	</div><!--/.container-->
+    <link rel="stylesheet" href="index.css" media="screen">
+	</div>
 </main>

@@ -23,6 +23,7 @@ SET time_zone = "+00:00";
 DROP DATABASE IF EXISTS BugMe;
 CREATE DATABASE BugMe;
 USE BugMe;
+
 -- --------------------------------------------------------
 
 --

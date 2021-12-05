@@ -20,7 +20,7 @@ function validation(event){
     if (emailexpression.test(email)){
         console.log("Valid email");
         if (passwordexpression.test(password) && password.length >=8){
-            console.log("Valid password");
+            //console.log("Valid password");
             return true;
         }
         else{
@@ -36,7 +36,7 @@ function validation(event){
 }
 
 
-function getPageData(event, pagename, paramspage) {
+function getpagedata(event, pagename, paramspage) {
 	var prefix = "./";
 	var suffix = ".php";
 	var pagelink = prefix + pagename + suffix;
@@ -44,7 +44,7 @@ function getPageData(event, pagename, paramspage) {
 	if (paramspage != "") {
 		pagelink = pagelink + paramspage;
 	}
-	getData(event, pagelink, findelementbyid("content"));
+	getdata(event, pagelink, findelementbyid("content"));
 }
 
 
@@ -53,10 +53,8 @@ function findelementbyid(id) {
 }
 
 
-/*
-	Passes form data to redirected_path for processing
-*/
-function passData(event, to, formdata, setto) {
+
+function passdata(event, to, formdata, setto) {
 	event.preventDefault();
 	fetch(to, { method: 'POST', body: formdata })
 	  .then(function(response) {
@@ -77,7 +75,7 @@ function passData(event, to, formdata, setto) {
 }
 
 
-function getData(event, from, setto) {
+function getdata(event, from, setto) {
 	event.preventDefault();
 	fetch(from)
 	  .then(function(response) {
@@ -98,34 +96,55 @@ function getData(event, from, setto) {
 }
 
 
-function logOut() {
+function logout() {
 	if (confirm("Are you sure?")) {
-		getPageData(event, "logout", "");
+		getpagedata(event, "logout", "");
 		findelementbyid("side_bar").remove();
 	}
 }
 
 
-function new_user_link() {
-	getPageData(event, "new_user", "");
+function newuserlink() {
+	getpagedata(event, "new_user", "");
 }
 
-function new_issue_link() {
-	getPageData(event, "new_issue", "");	
+function newissuelink() {
+	getpagedata(event, "new_issue", "");	
 }
 
-function validateNewUserForm(event) {
+
+
+function validatenewuserform(event) {
 	event.preventDefault();
 	var firstname = findelementbyid("firstname").value;
 	var lastname = findelementbyid("lastname").value;
 	var password = findelementbyid("password").value;
 	var email = findelementbyid("email").value;
 
-	var form_data = new FormData();
-	form_data.append("firstname", firstname);
-	form_data.append("lastname", lastname);
-	form_data.append("password", password);
-	form_data.append("email", email);
+	var formdata = new FormData();
+	formdata.append("firstname", firstname);
+	form_dta.append("lastname", lastname);
+	formdata.append("password", password);
+	formdata.append("email", email);
 
-	passData(event, "./new_user.php", form_data, findelementbyid("content"));
+	passdata(event, "./new_user.php", formdata, findelementbyid("content"));
+}
+
+
+function validatenewissueform(event) {
+	event.preventDefault();
+	var title = findelementbyid("title").value;
+	var description = findelementbyid("description").value;
+	var assigned = findelementbyid("assigned").value;
+	var type = findelementbyid("type").value;
+	var priority = findelementbyid("priority").value;
+
+	var form_data = new FormData();
+	form_data.append("title", title);
+	form_data.append("description", description);
+	form_data.append("assigned", assigned);
+	form_data.append("type", type);
+	form_data.append("priority", priority);
+
+	passdata(event, "./home.php", formdata, findelementbyid("content"));
 }
